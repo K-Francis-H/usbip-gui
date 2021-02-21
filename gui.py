@@ -153,7 +153,7 @@ def parse_local_list(text):
 			bus_info[2],
 			#bus_info[3],
 			man_info[0],
-			man_info[1]
+			man_info[1]+":"+man_info[2]
 		))
 	#print(rows)
 	return rows
@@ -186,7 +186,7 @@ def parse_remote_list(text):
 			rows.append((
 				vals[0],
 				vals[1],
-				vals[2]
+				vals[2]+":"+vals[3]
 			))
 	return rows
 
@@ -214,7 +214,7 @@ def parse_attached_list(text):
 			
 			info = info_line.strip().split(":")
 			manufacturer = info[0]
-			description = info[1]
+			description = info[1]+":"+info[2]
 
 			businfo = busid_line.strip().split("->")
 			bus_id = businfo[0].strip()
