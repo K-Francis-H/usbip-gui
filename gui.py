@@ -241,31 +241,31 @@ def list_remote_usb(server_ip):
 	return parse_remote_list(result.stdout)
 
 def bind_local_usb(bus_id):
-	result = subprocess.run(["sudo", "usbip", "bind", "--busid="+bus_id], capture_output=True, text=True)
+	result = subprocess.run(["usbip", "bind", "--busid="+bus_id], capture_output=True, text=True)
 	print(result.stdout)
 	print(result.stderr)
 	return result
 
 def unbind_local_usb(bus_id):
-	result = subprocess.run(["sudo", "usbip", "unbind", "--busid="+bus_id], capture_output=True, text=True)
+	result = subprocess.run(["usbip", "unbind", "--busid="+bus_id], capture_output=True, text=True)
 	print(result.stdout)
 	print(result.stderr)
 	return result
 
 def list_attached_usb():
-	result = subprocess.run(["sudo", "usbip", "port"], capture_output=True, text=True)
+	result = subprocess.run(["usbip", "port"], capture_output=True, text=True)
 	print(result.stdout)
 	print(result.stderr)
 	return parse_attached_list(result.stdout)
 
 def attach_remote_usb(server_ip, bus_id):
-	result = subprocess.run(["sudo", "usbip", "attach", "--remote="+server_ip, "--busid="+bus_id], capture_output=True, text=True)
+	result = subprocess.run(["usbip", "attach", "--remote="+server_ip, "--busid="+bus_id], capture_output=True, text=True)
 	print(result.stdout)
 	print(result.stderr)
 	return result
 
 def detach_remote_usb(port):
-	result = subprocess.run(["sudo", "usbip", "detach", "--port="+str(port)], capture_output=True, text=True)
+	result = subprocess.run(["usbip", "detach", "--port="+str(port)], capture_output=True, text=True)
 	print(result.stdout)
 	print(result.stderr)
 
