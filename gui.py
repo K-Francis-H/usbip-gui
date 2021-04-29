@@ -22,7 +22,7 @@ def init_kernel_modules():
 
 def init_usbip_server():
 	#TODO log 
-	subprcoess.run(["sudo", "usbipd"])
+	subprcocess.run(["sudo", "usbipd"])
 
 def scan():
 	#TODO
