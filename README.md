@@ -1,7 +1,7 @@
 # usbip-gui
 An attempt at wrapping the usbip linux kernel module with a gui for easier usability/configurability
 
-#Dependencies
+# Dependencies
 This project only runs on Linux, you will need to install `linux-tools-generic` to get the usbip kernel module. Installation should look something like this: 
 ```bash
 	sudo apt install linux-tools-generic
@@ -22,5 +22,5 @@ This project only runs on Linux, you will need to install `linux-tools-generic` 
 
 You may also have problems getting `tkinter.ttk` to import correctly. This script assumes that you are using Python 3.8+ so make sure thats the version that you are using.
 
-#Screenshot
+# Screenshot
 ![screenshot of usbip gui](screenshots/usbip_gui.png)
