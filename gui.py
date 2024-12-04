@@ -6,10 +6,16 @@ import sys
 import re
 import time
 from urllib.parse import urlparse
+from gettext import textdomain, bindtextdomain, gettext as _
 
-DEVICE_COLUMNS = ["bus_id", "manufacturer", "description"]
+APP_DOMAIN = "usbip-gui"
+
+textdomain(APP_DOMAIN)
+bindtextdomain(APP_DOMAIN, localedir="./po")
+
+DEVICE_COLUMNS = [_("bus_id"), _("manufacturer"), _("description")]
 DEVICE_COLUMN_WIDTHS = [8, 20, 50]
-ATTACHED_COLUMNS = ["host", "port", "bus_id", "manufacturer", "description"]
+ATTACHED_COLUMNS = [_("host"), _("port"), _("bus_id"), _("manufacturer"), _("description")]
 ATTACHED_COLUMN_WIDTHS = [21, 3, 8, 20, 50]
 USBIPD_PORT = 3240
 
@@ -51,32 +57,32 @@ def refresh_attached():
 def bind_local():
 	selection = local_listbox.selection()
 	if not selection:
-		print("no selection to bind")
+		print(_("no selection to bind"))
 		return
 	
 	bus_id = local_listbox.item(selection[0])['values'][0]
 
 	result = bind_local_usb(bus_id)
 	if result.returncode == 0:
-		print(bus_id+" bound successfully")
+		print(bus_id+_(" bound successfully"))
 
 def unbind_local():
 	selection = local_listbox.selection()
 	if not selection:
-		print("no selection to unbind")
+		print(_("no selection to unbind"))
 		return
 
 	bus_id = local_listbox.item(selection[0])['values'][0]
 
 	result = unbind_local_usb(bus_id)
 	if result.returncode == 0:
-		print(bus_id+" unbound succesfully")
+		print(bus_id+_(" unbound succesfully"))
 
 def attach_remote():
 	server_ip = remote_ip_input.get()
 	selection = remote_listbox.selection()
 	if not selection:
-		print("no selection to attach")
+		print(_("no selection to attach"))
 		return
 	print(server_ip)
 	print(selection[0])
@@ -107,7 +113,7 @@ def attach_remote():
 def detach_remote():
 	selection = attached_listbox.selection()
 	if not selection:
-		print("no selection to detach")
+		print(_("no selection to detach"))
 		return # no selected item
 	print(selection)
 	port = attached_listbox.item(selection[0])['values'][1]	
@@ -276,15 +282,15 @@ def detach_remote_usb(port):
 
 #	def __init__(self):
 root = Tk()
-root.wm_title("USB/IP Peer")
+root.wm_title(_("USB/IP Peer"))
 root.geometry("1002x842")
 
 #TODO listbox for remote (from entered IP) usb items
 remote_control_frame = Frame(root)
-remote_list_label = Label(remote_control_frame, text="Remote USB Devices for ")
+remote_list_label = Label(remote_control_frame, text=_("Remote USB Devices for "))
 remote_ip_input = Entry(remote_control_frame)
-remote_list_refresh_button = Button(remote_control_frame, text="Refresh", command=refresh_remote)
-remote_list_attach_button = Button(remote_control_frame, text="Attach Device", command=attach_remote)
+remote_list_refresh_button = Button(remote_control_frame, text=_("Refresh"), command=refresh_remote)
+remote_list_attach_button = Button(remote_control_frame, text=_("Attach Device"), command=attach_remote)
 
 
 remote_listbox = Treeview(columns=DEVICE_COLUMNS, show="headings")#Listbox(root)
@@ -309,10 +315,10 @@ remote_listbox.grid(column=0, row=1, sticky="ew", pady=10)
 #TODO listbox for local items
 
 local_control_frame = Frame(root)
-local_list_label = Label(local_control_frame, text="Local USB Devices")
-local_list_refresh_button = Button(local_control_frame, text="Refresh", command=refresh_local)
-local_list_bind_button = Button(local_control_frame, text="Bind Device", command=bind_local)
-local_list_unbind_button = Button(local_control_frame, text="Unbind Device", command=unbind_local)
+local_list_label = Label(local_control_frame, text=_("Local USB Devices"))
+local_list_refresh_button = Button(local_control_frame, text=_("Refresh"), command=refresh_local)
+local_list_bind_button = Button(local_control_frame, text=_("Bind Device"), command=bind_local)
+local_list_unbind_button = Button(local_control_frame, text=_("Unbind Device"), command=unbind_local)
 local_listbox = Treeview(columns=DEVICE_COLUMNS, show="headings")#Listbox(root)
 
 
@@ -337,9 +343,9 @@ local_control_frame.grid(column=0, row=2, sticky="ew", pady=10)
 local_listbox.grid(column=0, row=3, sticky="ew", pady=10)
 
 attached_control_frame = Frame(root)
-attached_list_label = Label(attached_control_frame, text="Attached Devices")
-attached_list_refresh_button = Button(attached_control_frame, text="Refresh", command=refresh_attached)
-detach_button = Button(attached_control_frame, text="Detach Device", command=detach_remote)
+attached_list_label = Label(attached_control_frame, text=_("Attached Devices"))
+attached_list_refresh_button = Button(attached_control_frame, text=_("Refresh"), command=refresh_attached)
+detach_button = Button(attached_control_frame, text=_("Detach Device"), command=detach_remote)
 attached_listbox = Treeview(columns=ATTACHED_COLUMNS, show="headings")
 
 for col in ATTACHED_COLUMNS:
