@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-04 14:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Katy248 <petrovanton247@gmail.com>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gui.py:16 gui.py:18
+msgid "bus_id"
+msgstr "ID шины"
+
+#: gui.py:16 gui.py:18
+msgid "manufacturer"
+msgstr "Производитель"
+
+#: gui.py:16 gui.py:18
+msgid "description"
+msgstr "Описание"
+
+#: gui.py:18
+msgid "host"
+msgstr "Хост"
+
+#: gui.py:18
+msgid "port"
+msgstr "Порт"
+
+#: gui.py:60
+msgid "no selection to bind"
+msgstr "Ничего не выбрано для привязки"
+
+#: gui.py:67
+msgid " bound successfully"
+msgstr " привязано успешно"
+
+#: gui.py:72
+msgid "no selection to unbind"
+msgstr "Ничего не выбрано для отвязки"
+
+#: gui.py:79
+msgid " unbound succesfully"
+msgstr " отвязано успешно"
+
+#: gui.py:85
+msgid "no selection to attach"
+msgstr "Ничего не выбрано для присоединения"
+
+#: gui.py:116
+msgid "no selection to detach"
+msgstr "Ничего не выбрано для отсоединения"
+
+#: gui.py:285
+msgid "USB/IP Peer"
+msgstr "USB/IP Пир"
+
+#: gui.py:290
+msgid "Remote USB Devices for "
+msgstr "Удалённые устройства USB"
+
+#: gui.py:292 gui.py:319 gui.py:347
+msgid "Refresh"
+msgstr "Перезагрузить"
+
+#: gui.py:293
+msgid "Attach Device"
+msgstr "Присоединить устройство"
+
+#: gui.py:318
+msgid "Local USB Devices"
+msgstr "Локальные устройства USB"
+
+#: gui.py:320
+msgid "Bind Device"
+msgstr "Привязать устройство"
+
+#: gui.py:321
+msgid "Unbind Device"
+msgstr "Отвязать устройство"
+
+#: gui.py:346
+msgid "Attached Devices"
+msgstr "Присоединённые устройства"
+
+#: gui.py:348
+msgid "Detach Device"
+msgstr "Отсоединить устройство"
