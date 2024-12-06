@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=pkexec python @MAIN_FILE_PATH@
+Name=USBIP GUI
+Categories=Settings;

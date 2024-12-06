@@ -182,7 +182,7 @@ def parse_remote_list(text):
 
 	rows = []
 
-	busid_regex = re.compile("^\d+-\d+$|^\d+-\d+\.\d+$")
+	busid_regex = re.compile("^\\d+-\\d+$|^\\d+-\\d+\\.\\d+$")
 	lines = text.strip().split("\n")
 	for line in lines:
 		vals = line.strip().split(":")
@@ -281,89 +281,88 @@ def detach_remote_usb(port):
 #class UsbIpGui():
 
 #	def __init__(self):
-root = Tk()
-root.wm_title(_("USB/IP Peer"))
-root.geometry("1002x842")
+def start_app():
+	root = Tk()
+	root.wm_title(_("USB/IP Peer"))
+	root.geometry("1002x842")
 
-#TODO listbox for remote (from entered IP) usb items
-remote_control_frame = Frame(root)
-remote_list_label = Label(remote_control_frame, text=_("Remote USB Devices for "))
-remote_ip_input = Entry(remote_control_frame)
-remote_list_refresh_button = Button(remote_control_frame, text=_("Refresh"), command=refresh_remote)
-remote_list_attach_button = Button(remote_control_frame, text=_("Attach Device"), command=attach_remote)
-
-
-remote_listbox = Treeview(columns=DEVICE_COLUMNS, show="headings")#Listbox(root)
-#remote_listbox.pack(side="left")
-
-for col in DEVICE_COLUMNS:
-	remote_listbox.heading(col, text=col.title())
-
-remote_devices = list_remote_usb('127.0.0.1')#'192.168.1.103')
-for device in remote_devices:
-	remote_listbox.insert("", "end", values=device)
-
-remote_list_label.grid(column=0, row=0, padx=10)
-remote_ip_input.grid(column=1, row=0, padx=10)
-remote_list_refresh_button.grid(column=2, row=0, padx=10)
-remote_list_attach_button.grid(column=3, row=0, padx=10)
+	#TODO listbox for remote (from entered IP) usb items
+	remote_control_frame = Frame(root)
+	remote_list_label = Label(remote_control_frame, text=_("Remote USB Devices for "))
+	remote_ip_input = Entry(remote_control_frame)
+	remote_list_refresh_button = Button(remote_control_frame, text=_("Refresh"), command=refresh_remote)
+	remote_list_attach_button = Button(remote_control_frame, text=_("Attach Device"), command=attach_remote)
 
 
-remote_control_frame.grid(column=0, row=0, sticky="ew", pady=10)
-remote_listbox.grid(column=0, row=1, sticky="ew", pady=10)
+	remote_listbox = Treeview(columns=DEVICE_COLUMNS, show="headings")#Listbox(root)
+	#remote_listbox.pack(side="left")
 
-#TODO listbox for local items
+	for col in DEVICE_COLUMNS:
+		remote_listbox.heading(col, text=col.title())
 
-local_control_frame = Frame(root)
-local_list_label = Label(local_control_frame, text=_("Local USB Devices"))
-local_list_refresh_button = Button(local_control_frame, text=_("Refresh"), command=refresh_local)
-local_list_bind_button = Button(local_control_frame, text=_("Bind Device"), command=bind_local)
-local_list_unbind_button = Button(local_control_frame, text=_("Unbind Device"), command=unbind_local)
-local_listbox = Treeview(columns=DEVICE_COLUMNS, show="headings")#Listbox(root)
+	remote_devices = list_remote_usb('127.0.0.1')#'192.168.1.103')
+	for device in remote_devices:
+		remote_listbox.insert("", "end", values=device)
 
-
-#local_listbox.pack(side="right")
-
-#setup column names
-for col in DEVICE_COLUMNS:
-	local_listbox.heading(col, text=col.title())
-	#local_listbox.column(col, width=tkFont)
-
-local_devices = list_local_usb()
-for device in local_devices:
-	local_listbox.insert('', "end", values=device)
+	remote_list_label.grid(column=0, row=0, padx=10)
+	remote_ip_input.grid(column=1, row=0, padx=10)
+	remote_list_refresh_button.grid(column=2, row=0, padx=10)
+	remote_list_attach_button.grid(column=3, row=0, padx=10)
 
 
-local_list_label.grid(column=0, row=0, padx=10)
-local_list_refresh_button.grid(column=1, row=0, padx=10)
-local_list_bind_button.grid(column=3, row=0, padx=10)
-local_list_unbind_button.grid(column=4, row=0, padx=10)
+	remote_control_frame.grid(column=0, row=0, sticky="ew", pady=10)
+	remote_listbox.grid(column=0, row=1, sticky="ew", pady=10)
 
-local_control_frame.grid(column=0, row=2, sticky="ew", pady=10)
-local_listbox.grid(column=0, row=3, sticky="ew", pady=10)
+	#TODO listbox for local items
 
-attached_control_frame = Frame(root)
-attached_list_label = Label(attached_control_frame, text=_("Attached Devices"))
-attached_list_refresh_button = Button(attached_control_frame, text=_("Refresh"), command=refresh_attached)
-detach_button = Button(attached_control_frame, text=_("Detach Device"), command=detach_remote)
-attached_listbox = Treeview(columns=ATTACHED_COLUMNS, show="headings")
-
-for col in ATTACHED_COLUMNS:
-	attached_listbox.heading(col, text=col.title())
-
-attached_devices = list_attached_usb()
-for device in attached_devices:
-	attached_listbox.insert("", "end", values=device)
-
-attached_list_label.grid(column=0, row=0, padx=10)
-attached_list_refresh_button.grid(column=1, row=0, padx=10)
-detach_button.grid(column=2, row=0, padx=10)
-
-attached_control_frame.grid(column=0, row=4, sticky="ew", pady=10)
-attached_listbox.grid(column=0, row=5, sticky="ew", pady=10)
+	local_control_frame = Frame(root)
+	local_list_label = Label(local_control_frame, text=_("Local USB Devices"))
+	local_list_refresh_button = Button(local_control_frame, text=_("Refresh"), command=refresh_local)
+	local_list_bind_button = Button(local_control_frame, text=_("Bind Device"), command=bind_local)
+	local_list_unbind_button = Button(local_control_frame, text=_("Unbind Device"), command=unbind_local)
+	local_listbox = Treeview(columns=DEVICE_COLUMNS, show="headings")#Listbox(root)
 
 
-#TODO package shit up into classes and functions
-root.mainloop()
+	#local_listbox.pack(side="right")
+
+	#setup column names
+	for col in DEVICE_COLUMNS:
+		local_listbox.heading(col, text=col.title())
+		#local_listbox.column(col, width=tkFont)
+
+	local_devices = list_local_usb()
+	for device in local_devices:
+		local_listbox.insert('', "end", values=device)
 
 
+	local_list_label.grid(column=0, row=0, padx=10)
+	local_list_refresh_button.grid(column=1, row=0, padx=10)
+	local_list_bind_button.grid(column=3, row=0, padx=10)
+	local_list_unbind_button.grid(column=4, row=0, padx=10)
+
+	local_control_frame.grid(column=0, row=2, sticky="ew", pady=10)
+	local_listbox.grid(column=0, row=3, sticky="ew", pady=10)
+
+	attached_control_frame = Frame(root)
+	attached_list_label = Label(attached_control_frame, text=_("Attached Devices"))
+	attached_list_refresh_button = Button(attached_control_frame, text=_("Refresh"), command=refresh_attached)
+	detach_button = Button(attached_control_frame, text=_("Detach Device"), command=detach_remote)
+	attached_listbox = Treeview(columns=ATTACHED_COLUMNS, show="headings")
+
+	for col in ATTACHED_COLUMNS:
+		attached_listbox.heading(col, text=col.title())
+
+	attached_devices = list_attached_usb()
+	for device in attached_devices:
+		attached_listbox.insert("", "end", values=device)
+
+	attached_list_label.grid(column=0, row=0, padx=10)
+	attached_list_refresh_button.grid(column=1, row=0, padx=10)
+	detach_button.grid(column=2, row=0, padx=10)
+
+	attached_control_frame.grid(column=0, row=4, sticky="ew", pady=10)
+	attached_listbox.grid(column=0, row=5, sticky="ew", pady=10)
+
+
+	#TODO package shit up into classes and functions
+	root.mainloop()
