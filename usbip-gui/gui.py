@@ -1,6 +1,7 @@
 # requires python 3.8+ may work on 3.6, 3.7 definitely broken on <= 3.5 due to subprocess args (text=True)
 from tkinter import *
 from tkinter.ttk import *
+import tkinter.messagebox as messagebox
 import subprocess
 import sys
 import re
@@ -26,6 +27,11 @@ ATTACHED_COLUMN_WIDTHS = [21, 3, 8, 20, 50]
 USBIPD_PORT = 3240
 
 attached_devices = {}
+
+local_listbox: Treeview
+remote_listbox: Treeview
+attached_listbox: Treeview
+remote_ip_input: Entry
 
 
 def init_kernel_modules():
@@ -71,6 +77,7 @@ def bind_local():
     selection = local_listbox.selection()
     if not selection:
         print(_("no selection to bind"))
+        messagebox.showerror(_("Error"), _("no selection to bind"))
         return
 
     bus_id = local_listbox.item(selection[0])["values"][0]
@@ -84,6 +91,7 @@ def unbind_local():
     selection = local_listbox.selection()
     if not selection:
         print(_("no selection to unbind"))
+        messagebox.showerror(_("Error"), _("no selection to unbind"))
         return
 
     bus_id = local_listbox.item(selection[0])["values"][0]
@@ -98,6 +106,7 @@ def attach_remote():
     selection = remote_listbox.selection()
     if not selection:
         print(_("no selection to attach"))
+        messagebox.showerror(_("Error"), _("no selection to attach"))
         return
     print(server_ip)
     print(selection[0])
@@ -129,6 +138,7 @@ def detach_remote():
     selection = attached_listbox.selection()
     if not selection:
         print(_("no selection to detach"))
+        messagebox.showerror(_("Error"), _("no selection to detach"))
         return  # no selected item
     print(selection)
     port = attached_listbox.item(selection[0])["values"][1]
@@ -317,7 +327,11 @@ def detach_remote_usb(port):
 # class UsbIpGui():
 
 # 	def __init__(self):
+
+
 def start_app():
+    global local_listbox, remote_listbox, attached_listbox, remote_ip_input
+
     root = Tk()
     root.wm_title(_("USB/IP Peer"))
     root.geometry("1002x842")
