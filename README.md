@@ -9,30 +9,40 @@ This project only runs on Linux, you will need to install `linux-tools-generic` 
 **deb-based:**
 
 ```bash
- sudo apt install linux-tools-generic
+sudo apt install linux-tools-generic
 
- sudo modprobe usbip_host
- sudo modprobe usbip_core
- sudo modprobe vhci_hcd
- 
- #then to start the gui use either of
- 
- sudo python3 gui.py
- 
- #or
+sudo modprobe usbip_host
+sudo modprobe usbip_core
+sudo modprobe vhci_hcd
 
- python3 main.py
+#then to start the gui use either of
 
- #which uses gksudo to start the gui 
+sudo python3 gui.py
+
+#or
+
+python3 main.py
+
+#which uses gksudo to start the gui 
 ```
 
 You may also have problems getting `tkinter.ttk` to import correctly. This script assumes that you are using Python 3.8+ so make sure thats the version that you are using.
 
-### Dev dependencies
+## Development
+
+### Requirements
 
 - `python`
 - `python3-tkinter`
 - `usbip`
+- `meson`
+
+### Build
+
+```bash
+meson setup .build/
+meson compile -C .build/
+```
 
 ## Screenshot
 
