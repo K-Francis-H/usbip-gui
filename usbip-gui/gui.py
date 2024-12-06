@@ -11,7 +11,7 @@ from gettext import textdomain, bindtextdomain, gettext as _
 APP_DOMAIN = "usbip-gui"
 
 textdomain(APP_DOMAIN)
-bindtextdomain(APP_DOMAIN, localedir="./po")
+bindtextdomain(APP_DOMAIN, localedir="/usr/local/share/locale/")
 
 DEVICE_COLUMNS = [_("bus_id"), _("manufacturer"), _("description")]
 DEVICE_COLUMN_WIDTHS = [8, 20, 50]
