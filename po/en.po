@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-06 14:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: usbip-gui/gui.py:17 usbip-gui/gui.py:22
+msgid "bus_id"
+msgstr ""
+
+#: usbip-gui/gui.py:17 usbip-gui/gui.py:23
+msgid "manufacturer"
+msgstr ""
+
+#: usbip-gui/gui.py:17 usbip-gui/gui.py:24
+msgid "description"
+msgstr ""
+
+#: usbip-gui/gui.py:20
+msgid "host"
+msgstr ""
+
+#: usbip-gui/gui.py:21
+msgid "port"
+msgstr ""
+
+#: usbip-gui/gui.py:79 usbip-gui/gui.py:80
+msgid "no selection to bind"
+msgstr ""
+
+#: usbip-gui/gui.py:80 usbip-gui/gui.py:94 usbip-gui/gui.py:109
+#: usbip-gui/gui.py:141
+msgid "Error"
+msgstr ""
+
+#: usbip-gui/gui.py:87
+msgid " bound successfully"
+msgstr ""
+
+#: usbip-gui/gui.py:93 usbip-gui/gui.py:94
+msgid "no selection to unbind"
+msgstr ""
+
+#: usbip-gui/gui.py:101
+msgid " unbound succesfully"
+msgstr ""
+
+#: usbip-gui/gui.py:108 usbip-gui/gui.py:109
+msgid "no selection to attach"
+msgstr ""
+
+#: usbip-gui/gui.py:140 usbip-gui/gui.py:141
+msgid "no selection to detach"
+msgstr ""
+
+#: usbip-gui/gui.py:336
+msgid "USB/IP Peer"
+msgstr ""
+
+#: usbip-gui/gui.py:341
+msgid "Remote USB Devices for "
+msgstr ""
+
+#: usbip-gui/gui.py:344 usbip-gui/gui.py:373 usbip-gui/gui.py:405
+msgid "Refresh"
+msgstr ""
+
+#: usbip-gui/gui.py:347
+msgid "Attach Device"
+msgstr ""
+
+#: usbip-gui/gui.py:371
+msgid "Local USB Devices"
+msgstr ""
+
+#: usbip-gui/gui.py:376
+msgid "Bind Device"
+msgstr ""
+
+#: usbip-gui/gui.py:379
+msgid "Unbind Device"
+msgstr ""
+
+#: usbip-gui/gui.py:403
+msgid "Attached Devices"
+msgstr ""
+
+#: usbip-gui/gui.py:408
+msgid "Detach Device"
+msgstr ""

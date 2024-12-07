@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-06 14:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Katy248 <petrovanton247@gmail.com>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: usbip-gui/gui.py:17 usbip-gui/gui.py:22
+msgid "bus_id"
+msgstr "ID шины"
+
+#: usbip-gui/gui.py:17 usbip-gui/gui.py:23
+msgid "manufacturer"
+msgstr "Производитель"
+
+#: usbip-gui/gui.py:17 usbip-gui/gui.py:24
+msgid "description"
+msgstr "Описание"
+
+#: usbip-gui/gui.py:20
+msgid "host"
+msgstr "Хост"
+
+#: usbip-gui/gui.py:21
+msgid "port"
+msgstr "Порт"
+
+#: usbip-gui/gui.py:79 usbip-gui/gui.py:80
+msgid "no selection to bind"
+msgstr "Ничего не выбрано для привязки"
+
+#: usbip-gui/gui.py:80 usbip-gui/gui.py:94 usbip-gui/gui.py:109
+#: usbip-gui/gui.py:141
+msgid "Error"
+msgstr "Ошибка"
+
+#: usbip-gui/gui.py:87
+msgid " bound successfully"
+msgstr " привязано успешно"
+
+#: usbip-gui/gui.py:93 usbip-gui/gui.py:94
+msgid "no selection to unbind"
+msgstr "Ничего не выбрано для отвязки"
+
+#: usbip-gui/gui.py:101
+msgid " unbound succesfully"
+msgstr " отвязано успешно"
+
+#: usbip-gui/gui.py:108 usbip-gui/gui.py:109
+msgid "no selection to attach"
+msgstr "Ничего не выбрано для присоединения"
+
+#: usbip-gui/gui.py:140 usbip-gui/gui.py:141
+msgid "no selection to detach"
+msgstr "Ничего не выбрано для отсоединения"
+
+#: usbip-gui/gui.py:336
+msgid "USB/IP Peer"
+msgstr "USB/IP Пир"
+
+#: usbip-gui/gui.py:341
+msgid "Remote USB Devices for "
+msgstr "Удалённые устройства USB"
+
+#: usbip-gui/gui.py:344 usbip-gui/gui.py:373 usbip-gui/gui.py:405
+msgid "Refresh"
+msgstr "Перезагрузить"
+
+#: usbip-gui/gui.py:347
+msgid "Attach Device"
+msgstr "Присоединить устройство"
+
+#: usbip-gui/gui.py:371
+msgid "Local USB Devices"
+msgstr "Локальные устройства USB"
+
+#: usbip-gui/gui.py:376
+msgid "Bind Device"
+msgstr "Привязать устройство"
+
+#: usbip-gui/gui.py:379
+msgid "Unbind Device"
+msgstr "Отвязать устройство"
+
+#: usbip-gui/gui.py:403
+msgid "Attached Devices"
+msgstr "Присоединённые устройства"
+
+#: usbip-gui/gui.py:408
+msgid "Detach Device"
+msgstr "Отсоединить устройство"

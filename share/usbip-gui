@@ -1,0 +1,4 @@
+#!/bin/sh
+
+pkexec \
+    bash -c "export XAUTHORITY=${XAUTHORITY}; export DISPLAY=${DISPLAY}; python -O -m usbip-gui"
